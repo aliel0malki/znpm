@@ -1,0 +1,47 @@
+name: Create release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Release pushed tag
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Zig
+        uses: mlugg/setup-zig@v1
+        with:
+          version: 0.13.0
+
+      - name: Build the binaries
+        run: |
+          zig build
+
+      - name: Create tar.gz archives dynamically
+        run: |
+          for dir in zig-out/*; do
+            if [ -d "$dir" ]; then
+              base_name=$(basename "$dir")
+              tar -czf "zig-out/znpm-${base_name}.tar.gz" -C "$dir" . -C ../.. LICENSE README.md
+              echo "Created archive: zig-out/znpm-${base_name}.tar.gz"
+            fi
+          done
+
+      - name: Create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref_name }}
+        run: |
+          gh release create "$tag" \
+              --repo="$GITHUB_REPOSITORY" \
+              --title="${GITHUB_REPOSITORY#*/} ${tag#v}" \
+              --generate-notes \
+              zig-out/*.tar.gz
