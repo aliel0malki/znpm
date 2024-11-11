@@ -1,6 +1,19 @@
 .{
     .name = "znpm",
+    // Must match the `version` in `build.zig`
     .version = "0.1.0",
+    // Must match the `minimum_zig_version` in `build.zig`
+    .minimum_zig_version = "0.13.0",
+    .dependencies = .{
+        .clap = .{
+            .url = "https://github.com/Hejsil/zig-clap/archive/refs/tags/0.9.1.tar.gz",
+            .hash = "122062d301a203d003547b414237229b09a7980095061697349f8bef41be9c30266b",
+        },
+        .curl = .{
+            .url = "https://github.com/jiacai2050/zig-curl/archive/667b70297d5875c849e29c1c621ec21c04588ed1.tar.gz",
+            .hash = "122017a5d50ca01a93fe67928cd7a80a408ff4d1a567f4e1dd06dcc2779c01761df6",
+        },
+    },
     .paths = .{
         "build.zig",
         "build.zig.zon",
