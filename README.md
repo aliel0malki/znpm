@@ -1,10 +1,9 @@
 # znpm
 
-**simple, fast, and powerful [node.js](https://nodejs.org/) package manager**
+simple, fast, and powerful [*Node.js*](https://nodejs.org/) package manager written in [*Zig*](https://ziglang.org/).
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/aliel0malki/znpm/blob/main/LICENSE)  
 ![BUILD STATUS](https://github.com/aliel0malki/znpm/actions/workflows/release.yml/badge.svg)
-[![Open Source](https://img.shields.io/badge/Open%20Source-yes-green.svg)](https://github.com/aliel0malki/znpm)
 
 ---
 
@@ -19,4 +18,4 @@
 [ROADMAP](https://github.com/aliel0malki/znpm/blob/main/ROADMAP.md)
 [STRUCTURE](https://github.com/aliel0malki/znpm/blob/main/STRUCTURE.md)
 
-> soooooooooooooo............ were just getting started.
+> this shi for learning purposes only
