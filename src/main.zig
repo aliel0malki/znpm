@@ -5,9 +5,9 @@
 //          Last Updated: 2024-11-9
 //  License: MIT
 //
-
 const std = @import("std");
+const CLI = @import("cli.zig");
 
-pub fn main() void {
-    std.debug.print("TEST RELEASE\n", .{});
+pub fn main() !void {
+    try CLI.parser();
 }
