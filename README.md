@@ -1,3 +1,10 @@
+######################################################
+#                                                    #
+#           > THIS SHI IS ARCHIVED FOR NOW           #
+#                                                    #
+######################################################
+
+```
 # znpm
 
 simple, fast, and powerful [*Node.js*](https://nodejs.org/) package manager written in [*Zig*](https://ziglang.org/).
@@ -17,5 +24,4 @@ simple, fast, and powerful [*Node.js*](https://nodejs.org/) package manager writ
 
 [ROADMAP](https://github.com/aliel0malki/znpm/blob/main/ROADMAP.md)
 [STRUCTURE](https://github.com/aliel0malki/znpm/blob/main/STRUCTURE.md)
-
-> this shi for learning purposes only
+```
